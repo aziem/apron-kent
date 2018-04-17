@@ -1,0 +1,13 @@
+*.o
+*.so
+*.a
+*.cmi
+*.cmo
+*.cmx
+*.cma
+*.cmxa
+*.cmxs
+
+mlapronidl/*.ml
+mlapronidl/*.mli
+mlapronidl/*.c
