@@ -27,7 +27,7 @@ include ../vars.mk
 # CLOSURE_SEQ - sequential incremental closure followed by quadratic strong closure loop
 # STRONGCLOSURE_SEQ - sequential incremental strong closure
 
-ICFLAGS += $(BASE_ICFLAGS) $(ML_ICFLAGS) -DCLOSURE_SEQ -DFLOYDOPT -DDBMCACHE
+ICFLAGS += $(BASE_ICFLAGS) $(ML_ICFLAGS) -DCLOSURE_SEQ -DDBMCACHE
 LDFLAGS += $(BASE_LIFLAGS) 
 CMXSINC = $(APRON_CMXSINC) -I .
 
