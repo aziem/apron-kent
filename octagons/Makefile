@@ -27,7 +27,7 @@ include ../vars.mk
 # CLOSURE_SEQ - sequential incremental closure followed by quadratic strong closure loop
 # STRONGCLOSURE_SEQ - sequential incremental strong closure
 
-ICFLAGS += $(BASE_ICFLAGS) $(ML_ICFLAGS) -DCLOSURE_SEQ -DDBMCACHE
+ICFLAGS += $(BASE_ICFLAGS) $(ML_ICFLAGS) -DCLOSURE_SEQ -DFLOYDOPT -DDBMCACHE
 LDFLAGS += $(BASE_LIFLAGS) 
 CMXSINC = $(APRON_CMXSINC) -I .
 
@@ -41,13 +41,13 @@ CCSOURCES = oct_hmat.c oct_print.c oct_transfer.c oct_closure.c incr_closure_seq
 	    oct_nary.c \
 	    oct_representation.c oct_predicate.c oct_resize.c
 
-ICFLAGS += $(BASE_ICFLAGS) $(ML_ICFLAGS) -DSEQ -DSTRONGINCR -DDBMCACHE
+CCINC = oct_internal.h oct_fun.h 
 
 # trigers a whole recompilation
 #DEPS = $(APRON_INCLUDE)/ap_abstract0.h
 
-LIBS = -lapron -lmpfr -lgmp -lm -lpthread -lrt 
-LIBS_DEBUG = -lapron_debug -lmpfr -lgmp -lm -lpthread -lrt 
+LIBS = -lapron -lmpfr -lgmp -lm -lrt 
+LIBS_DEBUG = -lapron_debug -lmpfr -lgmp -lm -lrt 
 
 
 # LIBS = -lapron -lmpfr -lgmp -lm -lcilkrts -lpthread
